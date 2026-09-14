@@ -51,12 +51,14 @@
         { id: 'sexo', etiqueta: 'Sexo', tipo: 'lista', req: true, opciones: ['Femenino', 'Masculino'] },
         { id: 'num_control', etiqueta: 'No. de control escolar', tipo: 'texto', req: true, max: 20 },
         {
-          id: 'especialidad', etiqueta: 'Especialidad', tipo: 'texto', req: true, max: 80,
-          ejemplo: 'Técnico en…',
-          sugerencias: [
-            'Técnico en Biotecnología', 'Técnico en Informática',
-            'Técnico en Producción Industrial de Alimentos', 'Técnico en Electromecánica Industrial',
-            'Técnico en Administración de Recursos Humanos', 'Técnico en Enfermería General'
+          // Carreras que imparte el plantel. Para agregar o quitar una,
+          // basta con editar esta lista.
+          id: 'especialidad', etiqueta: 'Especialidad', tipo: 'lista', req: true,
+          opciones: [
+            'Procesos de Gestión Administrativa',
+            'Programación',
+            'Biotecnología',
+            'Producción Industrial'
           ]
         },
         { id: 'semestre', etiqueta: 'Semestre', tipo: 'lista', req: true, opciones: ['Tercero', 'Cuarto', 'Quinto', 'Sexto'] }
