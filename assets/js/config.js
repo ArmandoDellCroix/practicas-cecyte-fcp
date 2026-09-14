@@ -24,11 +24,11 @@ window.CC_CONFIG = {
    *              administrador ve los registros de todos los alumnos desde
    *              cualquier dispositivo. Ver README.
    */
-  modo: 'local',
+  modo: 'supabase',
 
   supabase: {
-    url: '',      // https://xxxxxxxx.supabase.co
-    anonKey: ''   // clave "anon public" del proyecto
+    url: 'https://cryxabbwsohnwzopdspq.supabase.co/rest/v1/',      // https://xxxxxxxx.supabase.co
+    anonKey: 'sb_publishable_No3PSkjenvhMciCaB9K6OQ_Og5uvxnY'   // clave "anon public" del proyecto
   },
 
   administrador: {
@@ -38,7 +38,7 @@ window.CC_CONFIG = {
     correo: 'root32@cecytecampeche.edu.mx',
     // Solo se usa en modo 'local'. En modo 'supabase' este valor se ignora:
     // la contraseña la guarda y verifica Supabase, no el navegador.
-    contrasenaLocal: 'CtrlAdminFCP'
+    contrasenaLocal: ''
   },
 
   // Tamaño máximo por fotografía después de comprimirla, en píxeles.
