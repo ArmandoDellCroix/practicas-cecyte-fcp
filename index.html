@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acceso · Prácticas Profesionales CECyTE Campeche</title>
+<meta name="description" content="Acceso al Sistema de Prácticas Profesionales del CECyTE Campeche, plantel Felipe Carrillo Puerto.">
+<meta name="theme-color" content="#8e1250">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/acceso.css">
+</head>
+<body class="cc-cuerpo-acceso">
+<div class="cc-pantalla cc-cuerpo-acceso" data-pantalla="acceso">
+
+<main class="cc-acceso">
+
+  <header class="cc-encabezado">
+    <h1 class="cc-marca">CECyTE <span>Campeche</span></h1>
+    <p class="cc-sub">Prácticas Profesionales · Plantel Felipe Carrillo Puerto</p>
+  </header>
+
+  <div class="cc-avatar" data-avatar></div>
+
+  <div class="cc-tarjeta" data-tarjeta>
+    <div class="cc-tarjeta__giro" data-giro data-cara-visible="acceso">
+
+      <!-- ============================ ACCESO ============================ -->
+      <section class="cc-cara cc-cara--acceso" data-cara="acceso">
+        <h2 class="cc-titulo">Bienvenido de vuelta</h2>
+        <p>Entra con tu correo. El personal de vinculación entra con su usuario.</p>
+
+        <form data-formulario="acceso" novalidate autocomplete="off">
+
+          <div class="cc-campo" data-grupo="correo">
+            <div class="cc-campo__fila"><label for="cc-correo">Correo o usuario</label></div>
+            <input id="cc-correo" data-campo="correo" type="text" name="correo"
+                   maxlength="254" spellcheck="false" autocapitalize="off"
+                   autocomplete="off" placeholder="nombre@correo.com"
+                   aria-describedby="cc-nota-correo">
+            <p class="cc-nota" id="cc-nota-correo" data-nota="correo"></p>
+          </div>
+
+          <div class="cc-campo" data-grupo="contrasena">
+            <div class="cc-campo__fila">
+              <label for="cc-clave">Contraseña</label>
+              <label class="cc-casilla" data-etiqueta="mostrar">
+                <input type="checkbox" data-accion="mostrar">
+                <span class="cc-casilla__caja" aria-hidden="true"></span>
+                <span>Mostrar</span>
+              </label>
+            </div>
+            <input id="cc-clave" data-campo="contrasena" type="password" name="contrasena"
+                   autocomplete="off" aria-describedby="cc-nota-clave cc-mayus">
+            <p class="cc-nota" id="cc-nota-clave" data-nota="contrasena"></p>
+            <p class="cc-mayus" id="cc-mayus" data-aviso="mayus" data-visible="false">Bloq Mayús está activado.</p>
+          </div>
+
+          <div class="cc-opciones">
+            <label class="cc-casilla">
+              <input type="checkbox" data-accion="recordar">
+              <span class="cc-casilla__caja" aria-hidden="true"></span>
+              <span>Mantener mi sesión</span>
+            </label>
+            <a href="#recuperar">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <p class="cc-mensaje" data-mensaje role="status" aria-live="polite"></p>
+
+          <button class="cc-boton cc-boton--ancho" type="submit" data-accion="entrar" data-cargando="false">
+            <span class="cc-boton__giro" aria-hidden="true"></span>
+            <span data-texto-boton>Entrar</span>
+          </button>
+        </form>
+
+        <p class="cc-cambio">
+          <span>¿Aún no tienes cuenta?</span>
+          <button type="button" class="cc-cambio__circulo" data-voltear="registro"
+                  aria-label="Ir a crear una cuenta">+</button>
+        </p>
+      </section>
+
+      <!-- =========================== REGISTRO =========================== -->
+      <section class="cc-cara cc-cara--registro" data-cara="registro">
+        <h2 class="cc-titulo">Crea tu cuenta</h2>
+        <p>Escribe tu nombre tal como aparece en tu credencial.</p>
+
+        <form data-formulario="registro" novalidate autocomplete="on">
+
+          <div class="cc-duo">
+            <div class="cc-campo" data-grupo="ape_paterno">
+              <div class="cc-campo__fila"><label for="cc-ap">Apellido paterno</label></div>
+              <input id="cc-ap" data-campo="ape_paterno" type="text" maxlength="40"
+                     autocomplete="family-name" placeholder="Dzul" aria-describedby="cc-nota-ap">
+              <p class="cc-nota" id="cc-nota-ap" data-nota="ape_paterno"></p>
+            </div>
+            <div class="cc-campo" data-grupo="ape_materno">
+              <div class="cc-campo__fila"><label for="cc-am">Apellido materno</label></div>
+              <input id="cc-am" data-campo="ape_materno" type="text" maxlength="40"
+                     placeholder="Pech" aria-describedby="cc-nota-am">
+              <p class="cc-nota" id="cc-nota-am" data-nota="ape_materno"></p>
+            </div>
+          </div>
+
+          <div class="cc-campo" data-grupo="nombres">
+            <div class="cc-campo__fila"><label for="cc-nom">Nombre(s)</label></div>
+            <input id="cc-nom" data-campo="nombres" type="text" maxlength="60"
+                   autocomplete="given-name" placeholder="Defni Amijael" aria-describedby="cc-nota-nom">
+            <p class="cc-nota" id="cc-nota-nom" data-nota="nombres"></p>
+          </div>
+
+          <div class="cc-campo" data-grupo="matricula">
+            <div class="cc-campo__fila"><label for="cc-mat">No. de control escolar</label></div>
+            <input id="cc-mat" data-campo="matricula" type="text" maxlength="20"
+                   spellcheck="false" autocapitalize="characters" aria-describedby="cc-nota-mat">
+            <p class="cc-nota" id="cc-nota-mat" data-nota="matricula"></p>
+          </div>
+
+          <div class="cc-campo" data-grupo="correo">
+            <div class="cc-campo__fila"><label for="cc-reg-correo">Correo electrónico</label></div>
+            <input id="cc-reg-correo" data-campo="correo" type="email" maxlength="254"
+                   spellcheck="false" autocapitalize="off" autocomplete="email"
+                   placeholder="nombre@correo.com" aria-describedby="cc-nota-reg-correo">
+            <p class="cc-nota" id="cc-nota-reg-correo" data-nota="correo"></p>
+          </div>
+
+          <div class="cc-campo" data-grupo="contrasena">
+            <div class="cc-campo__fila">
+              <label for="cc-reg-clave">Contraseña</label>
+              <label class="cc-casilla" data-etiqueta="mostrar">
+                <input type="checkbox" data-accion="mostrar">
+                <span class="cc-casilla__caja" aria-hidden="true"></span>
+                <span>Mostrar</span>
+              </label>
+            </div>
+            <input id="cc-reg-clave" data-campo="contrasena" type="password" maxlength="8"
+                   autocomplete="new-password" inputmode="text" spellcheck="false"
+                   aria-describedby="cc-ayuda-clave cc-nota-reg-clave cc-reg-mayus">
+            <p class="cc-ayuda" id="cc-ayuda-clave">Exactamente 8 caracteres, solo letras y números.</p>
+            <div class="cc-fuerza" data-fuerza data-nivel="">
+              <span class="cc-fuerza__barra" aria-hidden="true"></span>
+              <span class="cc-fuerza__texto" data-fuerza-texto></span>
+            </div>
+            <p class="cc-nota" id="cc-nota-reg-clave" data-nota="contrasena"></p>
+            <p class="cc-mayus" id="cc-reg-mayus" data-aviso="mayus" data-visible="false">Bloq Mayús está activado.</p>
+          </div>
+
+          <div class="cc-campo" data-grupo="confirmar">
+            <div class="cc-campo__fila"><label for="cc-reg-conf">Confirma tu contraseña</label></div>
+            <input id="cc-reg-conf" data-campo="confirmar" type="password" maxlength="8"
+                   autocomplete="new-password" aria-describedby="cc-nota-reg-conf">
+            <p class="cc-nota" id="cc-nota-reg-conf" data-nota="confirmar"></p>
+          </div>
+
+          <div class="cc-legal">
+            <label class="cc-casilla">
+              <input type="checkbox" data-accion="aviso" aria-describedby="cc-nota-aviso">
+              <span class="cc-casilla__caja" aria-hidden="true"></span>
+              <span>Acepto el <a href="#aviso">aviso de privacidad</a> del CECyTE Campeche.</span>
+            </label>
+            <p class="cc-nota" id="cc-nota-aviso" data-nota="aviso"></p>
+          </div>
+
+          <p class="cc-mensaje" data-mensaje role="status" aria-live="polite"></p>
+
+          <button class="cc-boton cc-boton--ancho" type="submit" data-accion="registrar" data-cargando="false">
+            <span class="cc-boton__giro" aria-hidden="true"></span>
+            <span data-texto-boton>Crear cuenta</span>
+          </button>
+        </form>
+
+        <p class="cc-cambio">
+          <span>¿Ya tienes cuenta?</span>
+          <button type="button" class="cc-cambio__circulo" data-voltear="acceso"
+                  aria-label="Volver al acceso">&larr;</button>
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <p class="cc-demo" data-aviso-modo hidden>
+    Modo local: los datos se guardan en este navegador. Para que el
+    administrador vea los registros de todos los alumnos, configura Supabase
+    en <code>assets/js/config.js</code> (instrucciones en el README).
+  </p>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MorphSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/almacen.js"></script>
+<script src="assets/js/datos.js"></script>
+<script src="assets/js/yeti-avatar.js"></script>
+<script src="assets/js/form-base.js"></script>
+<script src="assets/js/login-form.js"></script>
+<script src="assets/js/signup-form.js"></script>
+<script src="assets/js/auth-card.js"></script>
+<script src="assets/js/acceso.js"></script>
+</body>
+</html>

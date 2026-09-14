@@ -1,0 +1,209 @@
+/* ==========================================================================
+   acceso.css — Pantalla de acceso y registro (index.html)
+   ========================================================================== */
+
+/* Sirve tanto en <body> (sitio de varias páginas) como en un contenedor
+   (versión de un solo archivo). */
+.cc-cuerpo-acceso {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: var(--cc-e-5) var(--cc-e-4);
+  background-color: var(--cc-fondo);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M-6 32h22V16h32v32H32V30h10' fill='none' stroke='%235e0b34' stroke-width='8'/%3E%3C/svg%3E");
+  background-size: 128px 128px;
+}
+
+.cc-acceso { width: 100%; max-width: 26rem; }
+
+.cc-encabezado { margin: 0 0 var(--cc-e-4); text-align: center; }
+
+.cc-marca {
+  font-size: var(--cc-t-lg);
+  font-weight: 800;
+  font-stretch: 90%;
+  line-height: 1.05;
+  color: var(--cc-papel);
+}
+
+.cc-marca span { color: var(--cc-verde); }
+
+.cc-sub {
+  margin: var(--cc-e-1) 0 0;
+  font-size: var(--cc-t-sm);
+  font-weight: 500;
+  color: rgba(245, 239, 227, 0.72);
+}
+
+/* --- Avatar -------------------------------------------------------------- */
+
+.cc-avatar {
+  position: relative;
+  width: 9.5rem;
+  height: 9.5rem;
+  margin: 0 auto var(--cc-e-4);
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--yeti-fondo);
+  box-shadow: 0 0 0 3px var(--cc-borde-fuerte), 0 12px 28px -14px rgba(30, 3, 16, 0.7);
+}
+
+.cc-avatar svg { display: block; width: 100%; height: 100%; }
+
+/* --- Tarjeta de dos caras ------------------------------------------------ */
+
+.cc-tarjeta {
+  position: relative;
+  perspective: 1800px;
+  transition: height 0.45s var(--cc-curva);
+}
+
+.cc-tarjeta__giro {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s var(--cc-curva);
+}
+
+.cc-tarjeta__giro[data-cara-visible='registro'] { transform: rotateY(180deg); }
+
+.cc-cara {
+  position: absolute;
+  inset: 0 0 auto 0;
+  padding: var(--cc-e-6) var(--cc-e-6) var(--cc-e-5) var(--cc-e-7);
+  background-color: var(--cc-superficie);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 33px,
+    var(--cc-renglon) 33px,
+    var(--cc-renglon) 34px
+  );
+  border-radius: var(--cc-radio-lg);
+  box-shadow: var(--cc-sombra-hoja);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.cc-cara::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 calc(var(--cc-e-7) - 0.9rem);
+  width: 2px;
+  background-color: var(--cc-verde);
+  opacity: 0.7;
+}
+
+.cc-cara--registro { transform: rotateY(180deg); }
+
+.cc-titulo {
+  margin: 0 0 var(--cc-e-1);
+  font-size: var(--cc-t-md);
+  font-weight: 800;
+}
+
+.cc-titulo + p {
+  margin: 0 0 var(--cc-e-5);
+  font-size: var(--cc-t-sm);
+  font-weight: 500;
+  color: var(--cc-texto-suave);
+}
+
+.cc-opciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cc-e-3);
+  margin: 0 0 var(--cc-e-4);
+}
+
+.cc-opciones a,
+.cc-legal a {
+  font-size: var(--cc-t-xs);
+  font-weight: 600;
+  color: var(--cc-texto-suave);
+  text-underline-offset: 3px;
+}
+
+.cc-opciones a:hover,
+.cc-legal a:hover { color: var(--cc-texto); }
+
+.cc-legal { margin: 0 0 var(--cc-e-4); }
+
+/* --- Cambio de cara ------------------------------------------------------ */
+
+.cc-cambio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cc-e-3);
+  margin: var(--cc-e-5) 0 0;
+  padding-top: var(--cc-e-4);
+  border-top: 1px dashed var(--cc-borde);
+  font-size: var(--cc-t-xs);
+  font-weight: 600;
+  color: var(--cc-texto-suave);
+}
+
+.cc-cambio__circulo {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.3rem;
+  height: 2.3rem;
+  font-family: inherit;
+  font-size: var(--cc-t-md);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cc-texto);
+  background-color: transparent;
+  border: 2px solid var(--cc-borde-fuerte);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--cc-vel-rapida) var(--cc-curva),
+              color var(--cc-vel-rapida) var(--cc-curva),
+              transform var(--cc-vel-rapida) var(--cc-curva);
+}
+
+.cc-cambio__circulo:hover {
+  color: var(--cc-vino);
+  background-color: var(--cc-verde);
+  transform: scale(1.06);
+}
+
+.cc-cambio__circulo:focus-visible { outline: 3px solid var(--cc-foco); outline-offset: 3px; }
+
+/* --- Pie de demostración ------------------------------------------------- */
+
+.cc-demo {
+  margin: var(--cc-e-4) 0 0;
+  padding: var(--cc-e-3) var(--cc-e-4);
+  font-size: var(--cc-t-xs);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--cc-papel);
+  background-color: rgba(0, 0, 0, 0.22);
+  border-radius: var(--cc-radio-md);
+}
+
+.cc-demo code { font-family: inherit; color: var(--cc-verde); }
+
+@media (max-width: 26rem) {
+  .cc-cara { padding: var(--cc-e-5) var(--cc-e-4) var(--cc-e-5) var(--cc-e-6); }
+  .cc-cara::before { inset-inline-start: calc(var(--cc-e-6) - 0.7rem); }
+  .cc-avatar { width: 7.5rem; height: 7.5rem; }
+  .cc-marca { font-size: var(--cc-t-md); }
+  .cc-opciones { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-tarjeta__giro { transition: none; }
+}
+
+/* Pareja de campos que se acomodan en una o dos columnas según quepan. */
+.cc-duo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0 var(--cc-e-3);
+}

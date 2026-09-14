@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi panel · Prácticas Profesionales CECyTE Campeche</title>
+<meta name="theme-color" content="#8e1250">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/panel.css">
+</head>
+<body class="cc-cuerpo-panel">
+<div class="cc-pantalla cc-cuerpo-panel" data-pantalla="alumno">
+
+<header class="cc-barra">
+  <div class="cc-barra__marca">
+    <h1>CECyTE <span>Campeche</span></h1>
+    <p data-plantel></p>
+  </div>
+  <div class="cc-barra__sesion">
+    <span data-nombre-sesion></span>
+    <button type="button" class="cc-boton cc-boton--fantasma cc-boton--chico" data-accion="salir">Salir</button>
+  </div>
+</header>
+
+<nav class="cc-pestanas cc-pestanas--barra" aria-label="Secciones del panel">
+  <button type="button" class="cc-pestana" data-pestana="captura" aria-selected="true">Mi expediente</button>
+  <button type="button" class="cc-pestana" data-pestana="documentos" aria-selected="false">Mis documentos</button>
+</nav>
+
+<main class="cc-contenido">
+
+  <!-- ===================== CAPTURA ===================== -->
+  <section class="cc-panel" data-vista="captura">
+    <div class="cc-panel__cabeza">
+      <div>
+        <h2>Expediente de prácticas profesionales</h2>
+        <p>Es la información del formato oficial de anexos. Llénalo por partes: primero la solicitud,
+           después cada reporte conforme avances. Lo que escribas se guarda solo mientras capturas.</p>
+      </div>
+      <div data-estado-expediente></div>
+    </div>
+
+    <p class="cc-mensaje" data-mensaje role="status" aria-live="polite"></p>
+
+    <form data-formulario-envoltura novalidate>
+      <div data-formulario-practicas></div>
+
+      <div class="cc-acciones">
+        <button type="submit" class="cc-boton" data-accion="guardar" data-cargando="false">
+          <span class="cc-boton__giro" aria-hidden="true"></span>
+          <span data-texto-boton>Guardar expediente</span>
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===================== REGISTROS ===================== -->
+  <section class="cc-panel" data-vista="documentos" hidden>
+    <div class="cc-panel__cabeza">
+      <div>
+        <h2>Mis documentos</h2>
+        <p>El paquete de anexos se genera con el formato oficial del plantel y tus datos ya puestos.
+           Descárgalo cuantas veces necesites; siempre sale con lo último que guardaste.</p>
+      </div>
+    </div>
+    <div data-documentos></div>
+  </section>
+
+</main>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/almacen.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="assets/js/datos.js"></script>
+<script src="assets/js/esquema-practicas.js"></script>
+<script src="assets/js/practicas-form.js"></script>
+<script src="assets/js/plantilla-docx.js"></script>
+<script src="assets/js/documento.js"></script>
+<script src="assets/js/alumno.js"></script>
+</body>
+</html>

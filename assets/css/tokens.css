@@ -1,0 +1,95 @@
+/* ==========================================================================
+   tokens.css — Sistema de diseño CECyTE Campeche
+   Única fuente de verdad para color, tipografía, espacio y radios.
+   Todo el resto del proyecto debe consumir estas variables, nunca hex sueltos.
+   ========================================================================== */
+
+:root {
+  /* --- Paleta de marca (tomada del material gráfico institucional) -------- */
+  --cc-magenta:        #8e1250;  /* fondo de marca */
+  --cc-magenta-claro:  #a8215f;
+  --cc-magenta-hondo:  #5e0b34;  /* greca / profundidad */
+  --cc-vino:           #6e1140;  /* titulares, trazos, texto fuerte */
+  --cc-verde:          #a6c61c;  /* acento (el "Feliz" del cartel) */
+  --cc-verde-hondo:    #82a010;
+  --cc-papel:          #f5efe3;  /* hoja de cuaderno */
+  --cc-papel-sombra:   #e7ddcb;
+  --cc-blanco:         #ffffff;
+
+  /* --- Roles semánticos --------------------------------------------------- */
+  --cc-fondo:            var(--cc-magenta);
+  --cc-superficie:       var(--cc-papel);
+  --cc-superficie-alta:  var(--cc-blanco);
+  --cc-texto:            var(--cc-vino);
+  --cc-texto-suave:      #8c6a7c;
+  --cc-borde:            rgba(110, 17, 64, 0.22);
+  --cc-borde-fuerte:     var(--cc-vino);
+  --cc-foco:             var(--cc-verde);
+  --cc-error:            #c62640;
+  --cc-exito:            var(--cc-verde-hondo);
+  --cc-renglon:          rgba(110, 17, 64, 0.10);
+
+  /* --- Avatar (el muñeco lee estas variables, no colores fijos) ----------- */
+  --yeti-fondo:   var(--cc-verde);
+  --yeti-piel:    var(--cc-papel);
+  --yeti-pelaje:  var(--cc-blanco);
+  --yeti-trazo:   var(--cc-vino);
+  --yeti-boca:    #4e0b2c;
+  --yeti-lengua:  #e0567f;
+
+  /* --- Tipografía --------------------------------------------------------- */
+  --cc-fuente: 'Archivo', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --cc-t-xs:   0.8125rem;
+  --cc-t-sm:   0.9375rem;
+  --cc-t-base: 1.0625rem;
+  --cc-t-md:   1.25rem;
+  --cc-t-lg:   1.75rem;
+  --cc-t-xl:   2.375rem;
+
+  /* --- Espacio (escala 4pt) ---------------------------------------------- */
+  --cc-e-1: 0.25rem;
+  --cc-e-2: 0.5rem;
+  --cc-e-3: 0.75rem;
+  --cc-e-4: 1rem;
+  --cc-e-5: 1.5rem;
+  --cc-e-6: 2rem;
+  --cc-e-7: 2.75rem;
+
+  /* --- Formas y elevación ------------------------------------------------- */
+  --cc-radio-sm: 3px;
+  --cc-radio-md: 6px;
+  --cc-radio-lg: 10px;
+  --cc-sombra-hoja: 0 18px 40px -18px rgba(40, 4, 22, 0.55);
+
+  /* --- Movimiento --------------------------------------------------------- */
+  --cc-vel-rapida: 140ms;
+  --cc-vel-media: 240ms;
+  --cc-curva: cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* Tema alterno de ejemplo: demuestra que el componente es re-teamatizable
+   sin tocar una sola línea de login.css ni del JS.
+   Se activa con <html data-tema="oscuro">. */
+[data-tema='oscuro'] {
+  --cc-fondo:           #3a0620;
+  --cc-superficie:      #4c0d2b;
+  --cc-superficie-alta: #5e1339;
+  --cc-texto:           #f7e6ef;
+  --cc-texto-suave:     #d5a9c0;
+  --cc-borde:           rgba(247, 230, 239, 0.28);
+  --cc-borde-fuerte:    var(--cc-verde);
+  --cc-renglon:         rgba(247, 230, 239, 0.08);
+  --yeti-piel:          #f7e6ef;
+  --yeti-pelaje:        #ffffff;
+}
+
+/* --- Añadidos del sistema de prácticas ----------------------------------- */
+:root {
+  --cc-ambar:        #d98b17;   /* reloj y lápiz del cartel */
+  --cc-panel:        #fdfbf7;   /* fondo de los paneles */
+  --cc-tabla-cebra:  rgba(110, 17, 64, 0.04);
+  --cc-t-2xl:        3rem;
+  --cc-e-8:          3.5rem;
+  --cc-sombra-panel: 0 2px 10px -4px rgba(40, 4, 22, 0.28);
+}

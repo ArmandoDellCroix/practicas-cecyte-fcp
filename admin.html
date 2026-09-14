@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administración · Prácticas Profesionales CECyTE Campeche</title>
+<meta name="theme-color" content="#8e1250">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/panel.css">
+</head>
+<body class="cc-cuerpo-panel">
+<div class="cc-pantalla cc-cuerpo-panel" data-pantalla="admin">
+
+<header class="cc-barra">
+  <div class="cc-barra__marca">
+    <h1>CECyTE <span>Campeche</span></h1>
+    <p data-plantel></p>
+  </div>
+  <div class="cc-barra__sesion">
+    <span data-nombre-sesion></span>
+    <button type="button" class="cc-boton cc-boton--fantasma cc-boton--chico" data-accion="salir">Salir</button>
+  </div>
+</header>
+
+<main class="cc-contenido">
+  <section class="cc-panel">
+
+    <div class="cc-panel__cabeza">
+      <div>
+        <h2>Expedientes de prácticas</h2>
+        <p>Un expediente por alumno. Revisa, corrige, marca el estado y descarga el paquete de anexos.</p>
+      </div>
+      <div class="cc-tabla__acciones">
+        <button type="button" class="cc-boton cc-boton--chico cc-boton--fantasma" data-accion="recargar">Actualizar</button>
+        <button type="button" class="cc-boton cc-boton--chico cc-boton--fantasma" data-accion="csv">Exportar CSV</button>
+        <button type="button" class="cc-boton cc-boton--chico" data-accion="word-todos">Descargar Word</button>
+      </div>
+    </div>
+
+    <p class="cc-mensaje" data-mensaje role="status" aria-live="polite"></p>
+
+    <div class="cc-cifras" data-cifras></div>
+
+    <div class="cc-filtros">
+      <div class="cc-campo">
+        <label for="f-texto">Buscar</label>
+        <input id="f-texto" type="search" data-filtro="texto" placeholder="Nombre, control, empresa o representante">
+      </div>
+      <div class="cc-campo">
+        <label for="f-estado">Estado</label>
+        <select id="f-estado" data-filtro="estado">
+          <option value="">Todos</option>
+          <option value="entregado">Pendiente de revisión</option>
+          <option value="observado">Con observaciones</option>
+          <option value="aprobado">Aprobado</option>
+          <option value="en_captura">En captura</option>
+        </select>
+      </div>
+      <div class="cc-campo">
+        <label for="f-sem">Semestre</label>
+        <select id="f-sem" data-filtro="semestre">
+          <option value="">Todos</option>
+          <option value="Tercero">Tercero</option>
+          <option value="Cuarto">Cuarto</option>
+          <option value="Quinto">Quinto</option>
+          <option value="Sexto">Sexto</option>
+        </select>
+      </div>
+    </div>
+
+    <div data-tabla></div>
+  </section>
+</main>
+
+<dialog class="cc-dialogo" data-dialogo>
+  <div class="cc-dialogo__cabeza">
+    <h2>Revisar: <span data-editor-titulo></span></h2>
+    <button type="button" class="cc-cerrar" data-accion="cerrar" aria-label="Cerrar">&times;</button>
+  </div>
+  <div class="cc-dialogo__cuerpo">
+    <div data-editor></div>
+    <div class="cc-acciones">
+      <button type="button" class="cc-boton" data-accion="guardar-edicion">Guardar cambios</button>
+    </div>
+  </div>
+</dialog>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/almacen.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="assets/js/datos.js"></script>
+<script src="assets/js/esquema-practicas.js"></script>
+<script src="assets/js/practicas-form.js"></script>
+<script src="assets/js/plantilla-docx.js"></script>
+<script src="assets/js/documento.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
