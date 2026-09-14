@@ -27,7 +27,7 @@ window.CC_CONFIG = {
   modo: 'supabase',
 
   supabase: {
-    url: 'https://cryxabbwsohnwzopdspq.supabase.co/rest/v1/',      // https://xxxxxxxx.supabase.co
+    url: 'https://cryxabbwsohnwzopdspq.supabase.co',      // https://xxxxxxxx.supabase.co
     anonKey: 'sb_publishable_No3PSkjenvhMciCaB9K6OQ_Og5uvxnY'   // clave "anon public" del proyecto
   },
 
